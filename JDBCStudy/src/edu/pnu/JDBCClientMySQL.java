@@ -17,11 +17,11 @@ public class JDBCClientMySQL {
 		// 질의를 위한 객체 생성 
 		Statement st = con.createStatement();
 		
-		// SQL 질의
+		// SQL 질의 
 		ResultSet rs = st.executeQuery("select Name, Continent, Population, HeadOfState from country");
-
+		
 		// 질의 결과 Parsing
-		while (rs.next()) { // 다음 결과 레코드로 이동
+		while (rs.next()) { // 다음 결과 레코드로 이동 // cursor processing
 			for (int i = 1; i <= 4; i++) {
 				if (i != 1) System.out.print(",");
 				System.out.println(rs.getString(i));

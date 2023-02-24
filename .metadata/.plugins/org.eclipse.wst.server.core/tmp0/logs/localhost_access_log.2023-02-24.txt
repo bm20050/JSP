@@ -84,3 +84,5 @@
 127.0.0.1 - - [24/Feb/2023:17:01:50 +0900] "GET / HTTP/1.1" 404 807
 0:0:0:0:0:0:0:1 - - [24/Feb/2023:17:01:50 +0900] "GET /MustHaveJSP/WEB-INF/classes/utils/CookieManager.java HTTP/1.1" 404 721
 0:0:0:0:0:0:0:1 - - [24/Feb/2023:17:01:57 +0900] "GET /MustHaveJSP/04Cookie/IdSaveProcess.jsp HTTP/1.1" 200 89
+127.0.0.1 - - [24/Feb/2023:17:03:35 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [24/Feb/2023:17:03:35 +0900] "GET /MustHaveJSP/04Cookie/IdSaveProcess.jsp HTTP/1.1" 200 89
