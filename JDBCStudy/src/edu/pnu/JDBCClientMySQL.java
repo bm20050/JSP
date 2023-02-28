@@ -20,8 +20,8 @@ public class JDBCClientMySQL {
 		// SQL 질의 
 		ResultSet rs = st.executeQuery("select Name, Continent, Population, HeadOfState from country");
 		
-		// 질의 결과 Parsing
-		while (rs.next()) { // 다음 결과 레코드로 이동 // cursor processing
+		// 질의 결과 Parsing (cursor processing)
+		while (rs.next()) { // 다음 결과 레코드로 이동 
 			for (int i = 1; i <= 4; i++) {
 				if (i != 1) System.out.print(",");
 				System.out.println(rs.getString(i));

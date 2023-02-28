@@ -4,8 +4,8 @@
 		<item value="https://github.com/bm20050/JSP.git"/>
 	</list>
 	<list key="EGit.KnownHosts">
-		<item value="bitbucket.org"/>
 		<item value="git.eclipse.org"/>
+		<item value="bitbucket.org"/>
 		<item value="github.com"/>
 	</list>
 	<list key="CommitDialog.authorValues">
