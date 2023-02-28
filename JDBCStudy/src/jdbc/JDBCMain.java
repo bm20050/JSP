@@ -9,8 +9,9 @@ import java.sql.Statement;
 
 class JDBC {
 	public JDBC() {
-		
+
 	}
+
 	public int printColumnName(ResultSet rs) throws Exception {
 		ResultSetMetaData meta = rs.getMetaData();
 		int count = meta.getColumnCount();
@@ -82,6 +83,7 @@ class JDBCH2 extends JDBC {
 
 			System.out.println("<=== StudyPrepareStatement ===>");
 			super.StudyPrepareStatement(con);
+			System.out.println();
 		}
 	}
 
@@ -99,6 +101,7 @@ class JDBCMySQL extends JDBC {
 
 			System.out.println("<=== StudyPrepareStatement ===>");
 			super.StudyPrepareStatement(con);
+			System.out.println();
 		}
 	}
 
