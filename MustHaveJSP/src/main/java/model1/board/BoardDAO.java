@@ -59,6 +59,43 @@ public class BoardDAO extends JDBConnect{
 				dto.setPostdate(rs.getDate("postdate"));
 				dto.setId(rs.getString("id"));
 				dto.setVisitcount(rs.getString("visitcount"));
+			
+				bbs.add(dto);
+			}
+		}
+		catch (Exception e) {
+			System.out.println("게시물 조회 중 예외 발생");
+			e.printStackTrace();
+		}
+		return bbs;
+	}
+	
+	public List<BoardDTO> selectListPage(Map<String, Object> map) {
+		List<BoardDTO> bbs = new Vector<BoardDTO>();
+		
+		String query = "select * from board ";
+		
+		if (map.get("searchWord") != null) {
+			query += " where " + map.get("searchField")
+				   + " like '%" + map.get("searchWord") + "%' ";
+		}
+		query += " order by num desc limit ?,?";
+		
+		try {
+			psmt = con.prepareStatement(query);
+			psmt.setInt(1, (int)map.get("start") - 1);
+			psmt.setInt(2, (int)map.get("pageSize"));
+			
+			rs = psmt.executeQuery();
+			
+			while (rs.next()) {
+				BoardDTO dto = new BoardDTO();
+				dto.setNum(rs.getString("num"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				dto.setPostdate(rs.getDate("postdate"));
+				dto.setId(rs.getString("id"));
+				dto.setVisitcount(rs.getString("visitcount"));
 				
 				bbs.add(dto);
 			}
@@ -67,6 +104,7 @@ public class BoardDAO extends JDBConnect{
 			System.out.println("게시물 조회 중 예외 발생");
 			e.printStackTrace();
 		}
+		
 		return bbs;
 	}
 	
