@@ -6,7 +6,7 @@
 	String num = request.getParameter("num");
 
 	BoardDAO dao = new BoardDAO(application);
-	System.out.println(num);
+	// System.out.println(num);
 	dao.updateVisitCount(num);
 	BoardDTO dto = dao.selectView(num);
 	dao.close();
