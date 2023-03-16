@@ -5,9 +5,8 @@
 <%@ include file="./IsLoggedIn.jsp" %>
 <%
 	String num = request.getParameter("num");
-	BoardDTO dto = new BoardDTO();
 	BoardDAO dao = new BoardDAO(application);
-	dto = dao.selectView(num);
+	BoardDTO dto = dao.selectView(num);
 	
 	String sessionId = session.getAttribute("UserId").toString();
 	
