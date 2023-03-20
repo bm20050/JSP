@@ -11,6 +11,7 @@ public class MVCBoardDTO {
 	private int downcount;
 	private String pass;
 	private int visitcount;
+	
 	public String getIdx() {
 		return idx;
 	}

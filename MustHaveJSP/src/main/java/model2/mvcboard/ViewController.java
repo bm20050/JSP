@@ -24,7 +24,7 @@ public class ViewController extends HttpServlet {
 		MVCBoardDTO dto = dao.selectView(idx);
 		dao.close();
 		
-		dto.setContent(dto.getContent().replaceAll("\r\n", "<br />"));
+		dto.setContent(dto.getContent().replaceAll("\r\n", "<br/>"));
 		
 		req.setAttribute("dto", dto);
 		req.getRequestDispatcher("/14MVCBoard/View.jsp").forward(req, resp);
